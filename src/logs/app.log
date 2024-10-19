@@ -1,0 +1,107 @@
+2024-10-19 17:43:34 | DEBUG | main:handle_conversation:19 - [聊天记录]: []
+2024-10-19 17:43:34 | ERROR | conversation_agent:chat_with_history:120 - Error in chat_with_history: Error code: 404 - {'timestamp': '2024-10-19T09:43:33.238+00:00', 'status': 404, 'error': 'Not Found', 'path': '/v4/chat/completions/chat/completions'}
+2024-10-19 17:43:34 | INFO | main:handle_conversation:22 - [ChatBot]: Sorry, I encountered an error while processing your request.
+2024-10-19 17:45:51 | DEBUG | main:handle_conversation:19 - [聊天记录]: []
+2024-10-19 17:45:53 | DEBUG | conversation_agent:chat_with_history:117 - API Response: 你好！很高兴见到你。今天我们想要练习一下英语对话。你想从哪个场景开始呢？我们有技术面试、餐厅点餐和会议主持可以选择。你可以选择一个你感兴趣的，或者如果你不确定，我可以为你介绍一个。
+2024-10-19 17:45:53 | INFO | main:handle_conversation:22 - [ChatBot]: 你好！很高兴见到你。今天我们想要练习一下英语对话。你想从哪个场景开始呢？我们有技术面试、餐厅点餐和会议主持可以选择。你可以选择一个你感兴趣的，或者如果你不确定，我可以为你介绍一个。
+2024-10-19 17:46:06 | DEBUG | main:handle_conversation:19 - [聊天记录]: [['你好 ', '你好！很高兴见到你。今天我们想要练习一下英语对话。你想从哪个场景开始呢？我们有技术面试、餐厅点餐和会议主持可以选择。你可以选择一个你感兴趣的，或者如果你不确定，我可以为你介绍一个。']]
+2024-10-19 17:46:08 | DEBUG | conversation_agent:chat_with_history:117 - API Response: Hello! It's good to talk to you too. Let's get started with a scenario that will help you practice English. How about we do a restaurant ordering scenario? Imagine you're at a restaurant and it's time to order. I'll be the waiter, and you'll be the customer. How do you think you'd start the conversation?
+2024-10-19 17:46:08 | INFO | main:handle_conversation:22 - [ChatBot]: Hello! It's good to talk to you too. Let's get started with a scenario that will help you practice English. How about we do a restaurant ordering scenario? Imagine you're at a restaurant and it's time to order. I'll be the waiter, and you'll be the customer. How do you think you'd start the conversation?
+2024-10-19 17:46:32 | DEBUG | main:handle_conversation:19 - [聊天记录]: [['你好 ', '你好！很高兴见到你。今天我们想要练习一下英语对话。你想从哪个场景开始呢？我们有技术面试、餐厅点餐和会议主持可以选择。你可以选择一个你感兴趣的，或者如果你不确定，我可以为你介绍一个。'], ['hello', "Hello! It's good to talk to you too. Let's get started with a scenario that will help you practice English. How about we do a restaurant ordering scenario? Imagine you're at a restaurant and it's time to order. I'll be the waiter, and you'll be the customer. How do you think you'd start the conversation?"]]
+2024-10-19 17:46:38 | DEBUG | conversation_agent:chat_with_history:117 - API Response: Great choice! Let's do a technical interview. This will help you practice introducing yourself, answering technical questions, and handling behavioral questions. I'll be the interviewer, and you'll be the interviewee. Let's begin.
+
+**Interviewer (DjangoPeng):** Good morning! Thank you for coming in today. Can you start by telling me a little about yourself?
+
+---
+
+**Student:** [Your response here]
+
+**DjangoPeng:** Excellent, thank you for sharing that. Now, could you tell me about a challenging project you've worked on and how you handled it?
+
+**Student:** [Your response here]
+
+**DjangoPeng:** That's a great approach. Now, let's move on to a behavioral question. How do you handle stress or tight deadlines at work?
+
+**Student:** [Your response here]
+
+**DjangoPeng:** I see, that's an interesting way to look at it. Last question, can you tell me about a time when you had to work as part of a team to achieve a goal?
+
+**Student:** [Your response here]
+
+---
+
+Now, let's see how you did. Remember, the goal here is to practice your speaking and listening skills, so don't worry too much about the content. I'll give you some feedback after you finish your responses. Please continue with the next question, and I'll respond accordingly.
+2024-10-19 17:46:38 | INFO | main:handle_conversation:22 - [ChatBot]: Great choice! Let's do a technical interview. This will help you practice introducing yourself, answering technical questions, and handling behavioral questions. I'll be the interviewer, and you'll be the interviewee. Let's begin.
+
+**Interviewer (DjangoPeng):** Good morning! Thank you for coming in today. Can you start by telling me a little about yourself?
+
+---
+
+**Student:** [Your response here]
+
+**DjangoPeng:** Excellent, thank you for sharing that. Now, could you tell me about a challenging project you've worked on and how you handled it?
+
+**Student:** [Your response here]
+
+**DjangoPeng:** That's a great approach. Now, let's move on to a behavioral question. How do you handle stress or tight deadlines at work?
+
+**Student:** [Your response here]
+
+**DjangoPeng:** I see, that's an interesting way to look at it. Last question, can you tell me about a time when you had to work as part of a team to achieve a goal?
+
+**Student:** [Your response here]
+
+---
+
+Now, let's see how you did. Remember, the goal here is to practice your speaking and listening skills, so don't worry too much about the content. I'll give you some feedback after you finish your responses. Please continue with the next question, and I'll respond accordingly.
+2024-10-19 23:00:26 | DEBUG | main:handle_conversation:19 - [聊天记录]: []
+2024-10-19 23:00:28 | DEBUG | conversation_agent:chat_with_history:117 - API Response: Hello there! I'm Jack, your English teacher. How are you today? Do you have any specific scenario in mind that you'd like to practice in English, or shall we start with one of the scenarios I've mentioned? For example, we could practice a technical interview, ordering food at a restaurant, or hosting a meeting. What do you think?
+2024-10-19 23:00:28 | INFO | main:handle_conversation:22 - [ChatBot]: Hello there! I'm Jack, your English teacher. How are you today? Do you have any specific scenario in mind that you'd like to practice in English, or shall we start with one of the scenarios I've mentioned? For example, we could practice a technical interview, ordering food at a restaurant, or hosting a meeting. What do you think?
+2024-10-19 23:01:04 | DEBUG | main:handle_conversation:19 - [聊天记录]: [['hello', "Hello there! I'm Jack, your English teacher. How are you today? Do you have any specific scenario in mind that you'd like to practice in English, or shall we start with one of the scenarios I've mentioned? For example, we could practice a technical interview, ordering food at a restaurant, or hosting a meeting. What do you think?"]]
+2024-10-19 23:01:08 | DEBUG | conversation_agent:chat_with_history:117 - API Response: That's great to hear! Since you're feeling fine, let's get started with a practical scenario that can help you improve your English speaking and listening skills. How about we practice a technical interview? This will help you get more comfortable with the types of questions you might encounter during a job interview.
+
+First, let's begin with a personal introduction. I'll start by introducing myself, and then I'll ask you to introduce yourself. Here's how we can do it:
+
+**Jack:** "Hello, my name is Jack. It's a pleasure to meet you. Could you tell me your name and a bit about your background?"
+
+Now, it's your turn to introduce yourself. Remember to include your name, a bit about your education, and your professional experience. Would you like to try that?
+2024-10-19 23:01:08 | INFO | main:handle_conversation:22 - [ChatBot]: That's great to hear! Since you're feeling fine, let's get started with a practical scenario that can help you improve your English speaking and listening skills. How about we practice a technical interview? This will help you get more comfortable with the types of questions you might encounter during a job interview.
+
+First, let's begin with a personal introduction. I'll start by introducing myself, and then I'll ask you to introduce yourself. Here's how we can do it:
+
+**Jack:** "Hello, my name is Jack. It's a pleasure to meet you. Could you tell me your name and a bit about your background?"
+
+Now, it's your turn to introduce yourself. Remember to include your name, a bit about your education, and your professional experience. Would you like to try that?
+2024-10-19 23:02:18 | DEBUG | main:handle_conversation:19 - [聊天记录]: [['hello', "Hello there! I'm Jack, your English teacher. How are you today? Do you have any specific scenario in mind that you'd like to practice in English, or shall we start with one of the scenarios I've mentioned? For example, we could practice a technical interview, ordering food at a restaurant, or hosting a meeting. What do you think?"], ['I am fine  ', 'That\'s great to hear! Since you\'re feeling fine, let\'s get started with a practical scenario that can help you improve your English speaking and listening skills. How about we practice a technical interview? This will help you get more comfortable with the types of questions you might encounter during a job interview.\n\nFirst, let\'s begin with a personal introduction. I\'ll start by introducing myself, and then I\'ll ask you to introduce yourself. Here\'s how we can do it:\n\n**Jack:** "Hello, my name is Jack. It\'s a pleasure to meet you. Could you tell me your name and a bit about your background?"\n\nNow, it\'s your turn to introduce yourself. Remember to include your name, a bit about your education, and your professional experience. Would you like to try that?']]
+2024-10-19 23:02:21 | DEBUG | conversation_agent:chat_with_history:117 - API Response: Nice! You've introduced yourself well, Jack. Now, let's add a bit more detail to your introduction. You mentioned that you're an engineer. You could tell me a bit more about your field of engineering or your most recent project. Here's an example:
+
+**Jack:** "That's impressive, Jack. As an engineer, what kind of projects have you worked on recently, or what field of engineering are you specializing in?"
+
+Feel free to use this as a reference or create your own introduction. Let's hear about your experiences!
+2024-10-19 23:02:21 | INFO | main:handle_conversation:22 - [ChatBot]: Nice! You've introduced yourself well, Jack. Now, let's add a bit more detail to your introduction. You mentioned that you're an engineer. You could tell me a bit more about your field of engineering or your most recent project. Here's an example:
+
+**Jack:** "That's impressive, Jack. As an engineer, what kind of projects have you worked on recently, or what field of engineering are you specializing in?"
+
+Feel free to use this as a reference or create your own introduction. Let's hear about your experiences!
+2024-10-19 23:02:47 | DEBUG | main:handle_conversation:19 - [聊天记录]: [['hello', "Hello there! I'm Jack, your English teacher. How are you today? Do you have any specific scenario in mind that you'd like to practice in English, or shall we start with one of the scenarios I've mentioned? For example, we could practice a technical interview, ordering food at a restaurant, or hosting a meeting. What do you think?"], ['I am fine  ', 'That\'s great to hear! Since you\'re feeling fine, let\'s get started with a practical scenario that can help you improve your English speaking and listening skills. How about we practice a technical interview? This will help you get more comfortable with the types of questions you might encounter during a job interview.\n\nFirst, let\'s begin with a personal introduction. I\'ll start by introducing myself, and then I\'ll ask you to introduce yourself. Here\'s how we can do it:\n\n**Jack:** "Hello, my name is Jack. It\'s a pleasure to meet you. Could you tell me your name and a bit about your background?"\n\nNow, it\'s your turn to introduce yourself. Remember to include your name, a bit about your education, and your professional experience. Would you like to try that?'], ['my name is jack，i am an engeer', 'Nice! You\'ve introduced yourself well, Jack. Now, let\'s add a bit more detail to your introduction. You mentioned that you\'re an engineer. You could tell me a bit more about your field of engineering or your most recent project. Here\'s an example:\n\n**Jack:** "That\'s impressive, Jack. As an engineer, what kind of projects have you worked on recently, or what field of engineering are you specializing in?"\n\nFeel free to use this as a reference or create your own introduction. Let\'s hear about your experiences!']]
+2024-10-19 23:02:50 | DEBUG | conversation_agent:chat_with_history:117 - API Response: Great, you're already providing details which is excellent. Let's expand on that a bit more. You can talk about a specific project or a challenge you've faced. For example:
+
+**Jack:** "That sounds fascinating. Could you tell me about a particularly challenging project you've worked on or a new technology you've recently implemented in your work?"
+
+Take your time to think about it and share your experience. This will help you demonstrate your technical expertise and problem-solving skills. Go ahead!
+2024-10-19 23:02:50 | INFO | main:handle_conversation:22 - [ChatBot]: Great, you're already providing details which is excellent. Let's expand on that a bit more. You can talk about a specific project or a challenge you've faced. For example:
+
+**Jack:** "That sounds fascinating. Could you tell me about a particularly challenging project you've worked on or a new technology you've recently implemented in your work?"
+
+Take your time to think about it and share your experience. This will help you demonstrate your technical expertise and problem-solving skills. Go ahead!
+2024-10-19 23:03:28 | DEBUG | main:handle_conversation:19 - [聊天记录]: [['hello', "Hello there! I'm Jack, your English teacher. How are you today? Do you have any specific scenario in mind that you'd like to practice in English, or shall we start with one of the scenarios I've mentioned? For example, we could practice a technical interview, ordering food at a restaurant, or hosting a meeting. What do you think?"], ['I am fine  ', 'That\'s great to hear! Since you\'re feeling fine, let\'s get started with a practical scenario that can help you improve your English speaking and listening skills. How about we practice a technical interview? This will help you get more comfortable with the types of questions you might encounter during a job interview.\n\nFirst, let\'s begin with a personal introduction. I\'ll start by introducing myself, and then I\'ll ask you to introduce yourself. Here\'s how we can do it:\n\n**Jack:** "Hello, my name is Jack. It\'s a pleasure to meet you. Could you tell me your name and a bit about your background?"\n\nNow, it\'s your turn to introduce yourself. Remember to include your name, a bit about your education, and your professional experience. Would you like to try that?'], ['my name is jack，i am an engeer', 'Nice! You\'ve introduced yourself well, Jack. Now, let\'s add a bit more detail to your introduction. You mentioned that you\'re an engineer. You could tell me a bit more about your field of engineering or your most recent project. Here\'s an example:\n\n**Jack:** "That\'s impressive, Jack. As an engineer, what kind of projects have you worked on recently, or what field of engineering are you specializing in?"\n\nFeel free to use this as a reference or create your own introduction. Let\'s hear about your experiences!'], ["That's impressive, Jack. As an engineer, what kind of projects have you worked on recently, or what field of engineering are you specializing in?", 'Great, you\'re already providing details which is excellent. Let\'s expand on that a bit more. You can talk about a specific project or a challenge you\'ve faced. For example:\n\n**Jack:** "That sounds fascinating. Could you tell me about a particularly challenging project you\'ve worked on or a new technology you\'ve recently implemented in your work?"\n\nTake your time to think about it and share your experience. This will help you demonstrate your technical expertise and problem-solving skills. Go ahead!']]
+2024-10-19 23:03:31 | DEBUG | conversation_agent:chat_with_history:117 - API Response: It's great to hear that you're excited about AI, Jack. Now, let's build on that interest. You can elaborate on why you think AI is cool or mention any specific AI applications that you find interesting. Here's an example to guide you:
+
+**Jack:** "AI is indeed an exciting field! Could you share what aspects of AI you find most intriguing, or any particular AI application that you've been following closely?"
+
+Feel free to use this as a prompt to expand on your thoughts. It's a good opportunity to showcase your knowledge and enthusiasm!
+2024-10-19 23:03:31 | INFO | main:handle_conversation:22 - [ChatBot]: It's great to hear that you're excited about AI, Jack. Now, let's build on that interest. You can elaborate on why you think AI is cool or mention any specific AI applications that you find interesting. Here's an example to guide you:
+
+**Jack:** "AI is indeed an exciting field! Could you share what aspects of AI you find most intriguing, or any particular AI application that you've been following closely?"
+
+Feel free to use this as a prompt to expand on your thoughts. It's a good opportunity to showcase your knowledge and enthusiasm!
