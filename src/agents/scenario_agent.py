@@ -1,65 +1,27 @@
-import json
 import random
-from openai import OpenAI
-from langchain_openai import ChatOpenAI
-from langchain_ollama.chat_models import ChatOllama  # 导入 ChatOllama 模型
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder  # 导入提示模板相关类
-from langchain_core.messages import HumanMessage, AIMessage  # 导入人类消息类和AI消息类
-from langchain_core.runnables.history import RunnableWithMessageHistory  # 导入带有消息历史的可运行类
+
+from langchain_core.messages import AIMessage  # 导入消息类
 
 from .session_history import get_session_history  # 导入会话历史相关方法
+from .agent_base import AgentBase
 from utils.logger import LOG
 
-class ScenarioAgent:
-    def __init__(self, scenario_name):
-        self.name = scenario_name
-        self.prompt_file = f"../prompts/{self.name}_prompt.txt"
-        self.intro_file = f"../content/intro/{self.name}.json"
-        self.prompt = self.load_prompt()
-        self.intro_messages = self.load_intro()
-        self.client = OpenAI(
-            api_key="51c7d9491590602cc291a879b3455f32.7PHWpwiNAVWfr8Dj",
-            base_url="https://open.bigmodel.cn/api/paas/v4/"
+
+class ScenarioAgent(AgentBase):
+    """
+       场景代理类，负责处理特定场景下的对话。
+       """
+
+    def __init__(self, scenario_name, session_id=None):
+        prompt_file = f"../prompts/{scenario_name}_prompt.txt"
+        intro_file = f"../content/intro/{scenario_name}.json"
+        super().__init__(
+            name=scenario_name,
+            prompt_file=prompt_file,
+            intro_file=intro_file,
+            session_id=session_id
         )
-        self.create_chatbot()
 
-
-    
-    def load_prompt(self):
-        try:
-            with open(self.prompt_file, "r", encoding="utf-8") as file:
-                return file.read().strip()
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Prompt file {self.prompt_file} not found!")
-
-    def load_intro(self):
-        try:
-            with open(self.intro_file, "r", encoding="utf-8") as file:
-                return json.load(file)
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Intro file {self.intro_file} not found!")
-        except json.JSONDecodeError:
-            raise ValueError(f"Intro file {self.intro_file} contains invalid JSON!")
-
-
-    def create_chatbot(self):
-            # 创建聊天提示模板，包括系统提示和消息占位符
-            system_prompt = ChatPromptTemplate.from_messages([
-                ("system", self.prompt),  # 系统提示部分
-                MessagesPlaceholder(variable_name="messages"),  # 消息占位符
-            ])
-
-            # 初始化 ChatOllama 模型，配置模型参数
-            self.chatbot = system_prompt | ChatOpenAI(
-                temperature=0.95,
-                model="glm-4-flash",
-                openai_api_key="51c7d9491590602cc291a879b3455f32.7PHWpwiNAVWfr8Dj",
-                openai_api_base="https://open.bigmodel.cn/api/paas/v4/chat/completions",
-                client=self.client,  # 使用自定义的客户端
-            )
-
-            # 将聊天机器人与消息历史记录关联起来
-            self.chatbot_with_history = RunnableWithMessageHistory(self.chatbot, get_session_history)
 
     def start_new_session(self, session_id: str = None):
         """
@@ -82,61 +44,3 @@ class ScenarioAgent:
             return history.messages[-1].content  # 返回历史记录中的最后一条消息
 
 
-    def chat_with_history(self, user_input, session_id: str = None):
-        """
-        处理用户输入并生成包含聊天历史的回复，同时记录日志。
-        
-        参数:
-            user_input (str): 用户输入的消息
-            session_id (str): 会话的唯一标识符
-        
-        返回:
-            str: 代理生成的回复内容
-        """
-        # TODO: InMemoryStore -> DB
-        if session_id is None:
-            session_id = self.name
-
-        try:
-            history = get_session_history(session_id)
-            messages = [{"role": "system", "content": self.prompt}]
-            for msg in history.messages:
-                if isinstance(msg, HumanMessage):
-                    messages.append({"role": "user", "content": msg.content})
-                elif isinstance(msg, AIMessage):
-                    messages.append({"role": "assistant", "content": msg.content})
-            messages.append({"role": "user", "content": user_input})
-
-            response = self.client.chat.completions.create(
-                model="glm-4-flash",
-                messages=messages
-            )
-            bot_message = response.choices[0].message.content
-            history.add_user_message(user_input)
-            history.add_ai_message(bot_message)
-            LOG.debug(f"API Response: {bot_message}")
-            return bot_message
-        except Exception as e:
-            LOG.error(f"Error in chat_with_history: {str(e)}")
-            return "Sorry, I encountered an error while processing your request."
-
-    def chat(self, user_input, session_id: str = None):
-        """
-        处理用户输入并生成回复，不记录日志。
-
-        参数:
-            user_input (str): 用户输入的消息
-            session_id (str): 会话的唯一标识符
-
-        返回:
-            str: 代理生成的回复内容
-        """
-        if session_id is None:
-            session_id = self.name
-
-        response = self.chatbot.invoke(
-            [HumanMessage(content=user_input)],  # 将用户输入封装为 HumanMessage
-            {"configurable": {"session_id": session_id}},  # 传入配置，包括会话ID
-        )
-
-        return response.content  # 返回生成的回复内容
